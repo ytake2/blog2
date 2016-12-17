@@ -1,0 +1,19 @@
+---
+author: "TakeR"
+categories: ["Stan"]
+date: 2016-12-17T21:27:24+09:00
+description: "ほげほげ"
+featured: ""
+featuredalt: ""
+featuredpath: ""
+linktitle: ""
+title: "RStudioでブログサイトの管理"
+---
+
+
+```{r,echo=T, eval=F}
+library(blogdown)
+new_site()
+new_content()
+```
+

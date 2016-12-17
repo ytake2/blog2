@@ -1,0 +1,415 @@
+---
+title: "StanでLDA"
+author: "TakeR"
+date: 2016-12-17T21:13:14-05:00
+categories: ["R"]
+---
+
+
+
+```{r, echo=F, results="hide",warning=F,message=F}
+library(knitr)
+opts_chunk$set(message=FALSE,error=F, warning=F)
+```
+
+
+```{r, result="hide"}
+library(RWordPress)
+library(XMLRPC)
+library(RISmed)
+library(tm)
+library(wordcloud2)
+library(RColorBrewer)
+library(topicmodels)
+```
+
+```{r, result="hide",echo=F}
+
+res <- EUtilsSummary("bayesian",#検索用語
+                     type = "esearch", 
+                     db = "pubmed", 
+                     datetype = "pdat", 
+                     mindate = 2014, #検索開始年 
+                     maxdate = 2017, #検索終了年
+                     retmax = 50 #最高何件記録するか
+                     )
+```
+
+
+```{r, result="hide",echo=F}
+  records = EUtilsGet(res) #論文情報の抜き出し
+  pubmed_data <- data.frame(Title = ArticleTitle(records), 
+                            Abstract = AbstractText(records))
+  #データを確認
+  library(DT)
+  #datatable(pubmed_data)
+```
+
+
+```{r,warning=F, result="hide",echo=F}
+#Corpusで処理
+pubmed_data$Abstract <- as.character(pubmed_data$Abstract)
+docs <- Corpus(VectorSource(pubmed_data$Abstract))
+
+docs <-tm_map(docs,content_transformer(tolower))
+toSpace <- content_transformer(function(x, pattern) { return (gsub(pattern, " ", x))})
+docs <- tm_map(docs, toSpace, "-")
+docs <- tm_map(docs, toSpace, "’")
+docs <- tm_map(docs, toSpace, "‘")
+docs <- tm_map(docs, toSpace, "•")
+docs <- tm_map(docs, toSpace, "”")
+
+docs <- tm_map(docs, removePunctuation)
+#Strip digits
+docs <- tm_map(docs, removeNumbers)
+#remove stopwords
+docs <- tm_map(docs, removeWords, stopwords("english"))
+#remove whitespace
+docs <- tm_map(docs, stripWhitespace)
+#Stem document
+docs <- tm_map(docs,stemDocument)
+#define and eliminate all custom stopwords
+stops<-c("can", "say","one","way","use",
+  "also","howev","tell","will",
+  "much","need","take","tend","even",
+  "like","particular","rather","said",
+  "get","well","make","ask","come","end",
+  "first","two","help","often","may",
+  "might","see","someth","thing","point",
+  "post","look","right","now","think","‘ve ",
+  "‘re ","anoth","put","set","new","good",
+  "want","sure","kind","larg","yes,","day","etc",
+  "quit","sinc","attempt","lack","seen","awar",
+  "littl","ever","moreov","though","found","abl",
+  "enough","far","earli","away","achiev","draw",
+  "last","never","brief","bit","entir","brief",
+  "great","lot", "background", "aim", "method", "result", "conclusion",
+  "show")
+
+myStopwords <- stops
+
+docs <- tm_map(docs, removeWords, myStopwords)
+#inspect a document as a check
+#delete.empty.docment
+dtm <- DocumentTermMatrix(docs)
+rowTotals <- apply(dtm , 1, sum) #Find the sum of words in each Document
+empty.rows <- dtm[rowTotals == 0, ]$dimnames[1][[1]]
+docs.new <- docs[-as.numeric(empty.rows)]
+
+#library(wordcloud)
+#wordcloud(docs.new, scale = c(4.5, 0.4), max.words = 200, 
+#          min.freq = 5, random.color=T, random.order = FALSE, rot.per = 0.00, 
+#          use.r.layout = F, colors = brewer.pal(3, "Paired"),
+#          family="Helvetica")
+```
+
+# wordcloud
+この記事は[Stanアドカレ](http://qiita.com/advent-calendar/2016/stan)14日目のエントリーです。今回のテーマはwordcloud、LDAです。wordcloudはしたの図にあるように、文章中で出現頻度が高い単語を複数選び出し、その頻度に応じた大きさで図示する手法で、単語の出現頻度が視覚的に理解できて便利。なによりイケてる。RではテキストデータをCorpusやdataframeとして整えてあげれば(ここがくっそ面倒)、wordcloudやwordcloud2といったパッケージで簡単にwordcloudを作成できます。特にwordcloud2は、以下のようにカッコ良い感じに仕上げてくれます。wordcloud2では文字の上に単語をのせるlettorcloudも可能です。
+
+```{r, echo=F}
+#Create document-term matrix
+dtm.new <- DocumentTermMatrix(docs.new)
+
+a<-table(dtm.new$j)
+term.f<-as.data.frame(cbind(dtm.new$dimnames$Terms,a))
+rownames(term.f)<-dtm.new$dimnames$Terms
+colnames(term.f)<-c("word","freq")
+term.f$freq<-as.numeric(as.character(term.f$freq))
+
+sortlist <- order(term.f$freq,decreasing=T)
+term.f <- term.f[sortlist,]
+term.f$word<-as.character(term.f$word)
+
+library(wordcloud2)
+wordcloud2(subset(term.f,freq>=5), size=0.4)
+```
+
+
+
+```{r}
+letterCloud(subset(term.f,freq>=3), word = "Stan", 
+            fontFamily = "Helvetica",
+            color=brewer.pal(3,"Paired"), 
+            wordSize=0, backgroundColor="white")
+```
+
+
+# pubmedから論文情報をRStudioにぶち込む
+上記のワードクラウドは、Pubmedでbayesianという検索用語でヒットした48本の英語論文のアブストラクトのテキストデータの単語の出現頻度に応じてプロットしたものです。以下のように[RISmed](https://www.r-bloggers.com/how-to-search-pubmed-with-rismed-package-in-r/)を用いると、Pubmedから簡単に論文情報を入手できます。
+
+
+```{r, eval=F, echo=T, eval=F}
+res <- EUtilsSummary("bayesian",#検索用語
+                     type = "esearch", 
+                     db = "pubmed", 
+                     datetype = "pdat", 
+                     mindate = 2014, #検索開始年 
+                     maxdate = 2017, #検索終了年
+                     retmax = 50 #最高何件記録するか
+                     )
+```
+
+
+EUtilsSummary関数は検索演算子を発生させる関数になります。検索用語や検索開始、終了年を指定します。EUtilsGet関数で、論文情報を抜き出し格納します。そこからTitle情報を抜き出したいときはArticleTitle関数、アブストテキスト情報を抜き出したいときはAbstractText関数が使えます。
+
+
+```{r, result="hide",eval=F}
+  records = EUtilsGet(res) #論文情報の抜き出し
+  pubmed_data <- data.frame(Title = ArticleTitle(records), 
+                            Abstract = AbstractText(records))
+```
+
+
+こんな感じで論文のアブストテキストデータが抽出されました。今回は、この論文一つ一つのアブストテキストデータに対してトピックモデルの代表格であるLDAを適用し、それぞれの論文を潜在的なトピックにわりふって、トピックのまとまりごとにwordcloudを作ってやろう。というのが解析の目的になります。
+
+```{r, }
+  #データを確認
+  library(knitr)
+  kable(head(pubmed_data,10))
+```
+
+
+以下では、LDAを実施するためにテキストデータを整え、扱いやすくするためにCorpusデータに流していきます。論文の検索や下処理はもっともっと丁寧にやる必要がありますが、今回は飛ばします。
+
+```{r,warning=F, echo=T,eval=F}
+#Corpusで処理
+pubmed_data$Abstract <- as.character(pubmed_data$Abstract)
+docs <- Corpus(VectorSource(pubmed_data$Abstract))
+
+docs <-tm_map(docs,content_transformer(tolower))
+toSpace <- content_transformer(function(x, pattern) { return (gsub(pattern, " ", x))})
+docs <- tm_map(docs, toSpace, "-")
+docs <- tm_map(docs, toSpace, "’")
+docs <- tm_map(docs, toSpace, "‘")
+docs <- tm_map(docs, toSpace, "•")
+docs <- tm_map(docs, toSpace, "”")
+
+docs <- tm_map(docs, removePunctuation)
+#Strip digits
+docs <- tm_map(docs, removeNumbers)
+#remove stopwords
+docs <- tm_map(docs, removeWords, stopwords("english"))
+#remove whitespace
+docs <- tm_map(docs, stripWhitespace)
+#Stem document
+docs <- tm_map(docs,stemDocument)
+#define and eliminate all custom stopwords
+stops<-c("can", "say","one","way","use",
+  "also","howev","tell","will",
+  "much","need","take","tend","even",
+  "like","particular","rather","said",
+  "get","well","make","ask","come","end",
+  "first","two","help","often","may",
+  "might","see","someth","thing","point",
+  "post","look","right","now","think","‘ve ",
+  "‘re ","anoth","put","set","new","good",
+  "want","sure","kind","larg","yes,","day","etc",
+  "quit","sinc","attempt","lack","seen","awar",
+  "littl","ever","moreov","though","found","abl",
+  "enough","far","earli","away","achiev","draw",
+  "last","never","brief","bit","entir","brief",
+  "great","lot", "background", "aim", "method", "result", "conclusion",
+  "show")
+
+myStopwords <- stops
+
+docs <- tm_map(docs, removeWords, myStopwords)
+#inspect a document as a check
+#delete.empty.docment
+dtm <- DocumentTermMatrix(docs)
+rowTotals <- apply(dtm , 1, sum) #Find the sum of words in each Document
+empty.rows <- dtm[rowTotals == 0, ]$dimnames[1][[1]]
+docs.new <- docs[-as.numeric(empty.rows)]
+```
+
+
+
+```{r, results="hide", eval=F,echo=F}
+#collapse matrix by summing over columns
+freq <- colSums(as.matrix(dtm.new))
+
+#create sort order (descending)
+ord <- order(freq,decreasing=TRUE)
+
+freq20<-data.frame(head(freq[ord],20))
+freq20$word<-rownames(freq20)
+names(freq20)<-c("freq","word")
+
+library(ggplot2)
+ggplot(freq20,aes(x=word,y=freq,col=word))+geom_point()+theme_bw()
+library(rstan)
+library(gtools)
+```
+
+# stanでLDA
+
+さて、データが整ったので、LDAを実施しします。LDAで知りたいパラメタは2つ。一つは、どの文章がどのトピックに属する確率が高いかという、トピック分布(今回はtheta)。もう一つは、あるトピックはどのような用語が生起する確率が高いのかという、単語分布 (今回はphi)。
+LDAをstanで書くと以下のようになります。コードは、[こちらのブログ](http://statmodeling.hatenablog.com/entry/topic-model-4)を参考、というか丸パクリです。アヒル本にも、超わかりやすい解説あります。
+
+
+```{stan, output.var='stanLDA'}
+data {
+  int<lower=2> K;                    # num topics
+  int<lower=2> V;                    # num words
+  int<lower=1> M;                    # num docs
+  int<lower=1> N;                    # total word instances
+  int<lower=1,upper=V> W[N];         # word n
+  int<lower=1> Freq[N];              # frequency of word n
+  int<lower=1,upper=N> Offset[M,2];  # range of word index per doc
+  vector<lower=0>[K] Alpha;          # topic prior
+  vector<lower=0>[V] Beta;           # word prior
+}
+parameters {
+  simplex[K] theta[M];   # topic dist for doc m
+  simplex[V] phi[K];     # word dist for topic k
+}
+model {
+  # prior
+  for (m in 1:M)
+    theta[m] ~ dirichlet(Alpha);
+  for (k in 1:K)
+    phi[k] ~ dirichlet(Beta);
+  
+  # likelihood
+  for (m in 1:M) {
+    for (n in Offset[m,1]:Offset[m,2]) {
+      real gamma[K];
+      for (k in 1:K)
+        gamma[k] = log(theta[m,k]) + log(phi[k,W[n]]);
+      increment_log_prob(Freq[n] * log_sum_exp(gamma));
+    }
+  }
+}
+```
+
+
+なお、今回は、複数のトピック数をためして見ましたがトピック数2以外がうまく分かれませんでした。HDPなど、トピック数の推定法、また時間があれば取り組んでみたいです。とりあえず、上記のコードをldatest.stanで保存し、以下のコードでキックして、（*´д`*）ﾊｧﾊｧします。
+
+```{r}
+
+K=2 # トピック数
+V=dtm.new$ncol # 単語数
+M=dtm.new$nrow # 論文数
+N=length(dtm.new$j) #総単語数
+W<-dtm.new$j # 出現単語
+Freq<-dtm.new$v # 単語の出現頻度
+offset <- t(sapply(1:M, function(m){ range(which(m==W)) })) #出現単語の範囲
+
+data <- list(
+  K=K,
+  M=M,
+  V=V,
+  N=N,
+  W=W,
+  Freq=Freq,
+  Offset=offset,
+  Alpha=rep(1, K), # トピック分布の事前分布
+  Beta=rep(0.5, V) # 単語分布の事前分布
+)
+
+library(rstan)
+stanmodel <- stan_model(file="ldatest.stan")
+#fit_nuts <- sampling(stanmodel, data=data, seed=123)
+fit_vb <- vb(stanmodel, data=data, seed=123)
+```
+
+というわけで以下は2つのトピックを指定した結果をみていきます。
+横軸に単語の生起確率、縦軸に各単語をとって、各トピックでの単語の生起確率を示しています。
+
+```{r}
+library(ggplot2)
+
+ms <- rstan::extract(fit_vb)
+
+probs <- c(0.1, 0.25, 0.5, 0.75, 0.9)
+idx <- expand.grid(1:K, 1:V)
+
+d_qua <- t(apply(idx, 1, function(x) quantile(ms$phi[,x[1],x[2]], probs=probs)))
+d_qua <- data.frame(idx, d_qua)
+colnames(d_qua) <- c('topic', 'word', paste0('p', probs*100))
+
+p <- ggplot(data=d_qua, aes(x=word, y=p50))
+p <- p + theme_bw(base_size=18)
+p <- p + facet_wrap(~topic, ncol=3)
+p <- p + coord_flip()
+p <- p + scale_x_reverse(breaks=c(1, seq(20, 1925, 60)))
+p <- p + geom_bar(stat='identity')
+p <- p + labs(x='word', y='phi[k,y]')
+p
+```
+
+今後は各論文を横軸にとって、生起確率(MAP推定値)を縦軸にプロットしています。こうみると、二つのトピックそれぞれに違う論文が反応している様子がわかります。
+
+```{r,warning=F}
+ms <- rstan::extract(fit_vb)
+
+probs <- c(0.1, 0.25, 0.5, 0.75, 0.9)
+idx <- expand.grid(1:M, 1:K)
+d_qua=NULL
+
+d_qua <- t(apply(idx, 1, function(x) quantile(ms$theta[,x[1],x[2]],probs=probs)))
+d_qua <- data.frame(idx, d_qua)
+
+colnames(d_qua) <- c('article', 'topic', paste0('p', probs*100))
+
+best.topic=NULL
+for(i in 1:48){
+aaa<-subset(d_qua,article==i)
+best.topic<-c(best.topic,max.col(t(aaa$p50)))
+}
+
+
+p <- ggplot(d_qua, aes(x=article, y=p50,col=as.factor(topic)))
+p <- p +geom_point()
+p <- p + facet_wrap(~as.factor(topic))
+p +theme_bw()
+
+```
+
+論文を該当する確率の高い方のトピックわりふって、docs.newからトピックグループごとのCorpusを抜き出します。そしてグループごとの頻出語を検討します。
+
+```{r}
+A<-which(best.topic==1)
+B<-which(best.topic==2)
+
+dtm.A<-DocumentTermMatrix(docs.new[A])
+dtm.B<-DocumentTermMatrix(docs.new[B])
+
+freqA <- colSums(as.matrix(dtm.A))
+ordA <- order(freqA,decreasing=TRUE)
+freq20A<-data.frame(head(freqA[ordA],50))
+freq20A$wordA<-rownames(freq20A)
+names(freq20A)<-c("freq","word")
+
+freqB <- colSums(as.matrix(dtm.B))
+ordB <- order(freqB,decreasing=TRUE)
+freq20B<-data.frame(head(freqB[ordB],50))
+freq20B$wordB<-rownames(freq20B)
+names(freq20B)<-c("freq","word")
+freqs<-data.frame(freq20A$word,freq20B$word,rank=1:50)
+
+kable(freqs)
+```
+
+あとは、グループごとにwordcloudを作成してやれば、本日の任務は完了です。上位の単語はあまり変わらないので見た目があまり変わらないので今回は面白くないですが、細かく見ていると、右の図の方が、infection、patient、response、 clinical、といった臨床関連用語が散見されるので医学的な研究のグループとしてまとめられているように思います (テキトー)。
+
+```{r}
+library(wordcloud)
+library(dplyr)
+par(mfrow=c(1,2))
+wordcloud::wordcloud(docs.new[A], scale = c(4.5, 0.4), max.words = 200, 
+          min.freq = 1, random.color=T, random.order = FALSE, rot.per = 0.00, 
+          use.r.layout = F, colors = brewer.pal(3, "Paired"),
+          family="Helvetica")
+
+wordcloud::wordcloud(docs.new[B], scale = c(4.5, 0.4), max.words = 200, 
+          min.freq = 5, random.color=T, random.order = FALSE, rot.per = 0.00, 
+          use.r.layout = F, colors = brewer.pal(3, "Paired"),
+          family="Helvetica")
+
+```
+
+# 感想
+stanでLDA、モデルはシンプルだけど、結構重たい処理になるので、高速化をどうするか。RでLDA用の便利な関数(topicmodelsなど)が続々と出てるので、それでまずはtopicmodelに親しむのはあり。gensimなど、HDPに挑戦していきたい。
+
+## Enjoy!!

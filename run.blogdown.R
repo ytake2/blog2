@@ -1,0 +1,5 @@
+library(blogdown)
+new_site()
+new_content("/post/new2.Rmd")
+build_site()
+serve_site()
