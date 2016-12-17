@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Future Imperfect</title>
+    <link>/categories/%E3%81%AB%E3%82%83%E3%82%93%E3%81%93/index.xml</link>
+    <description>Recent content on Hugo Future Imperfect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="/categories/%E3%81%AB%E3%82%83%E3%82%93%E3%81%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>new2</title>
+      <link>/post/new2/</link>
+      <pubDate>Sat, 17 Dec 2016 21:35:39 +0900</pubDate>
+      
+      <guid>/post/new2/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;div id=&#34;h&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;うほほh&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;もほほ&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section level1&#34;&gt;
+&lt;h1&gt;けほほ&lt;/h1&gt;
+&lt;/div&gt;
+
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

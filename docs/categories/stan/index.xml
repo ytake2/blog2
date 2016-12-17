@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Future Imperfect</title>
+    <link>/categories/stan/index.xml</link>
+    <description>Recent content on Hugo Future Imperfect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="/categories/stan/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RStudioでブログサイトの管理</title>
+      <link>/post/new/</link>
+      <pubDate>Sat, 17 Dec 2016 21:27:24 +0900</pubDate>
+      
+      <guid>/post/new/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(blogdown)
+new_site()
+new_content()&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
