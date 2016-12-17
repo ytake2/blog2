@@ -15,7 +15,15 @@
       <pubDate>Sat, 17 Dec 2016 21:13:14 -0500</pubDate>
       
       <guid>/post/lda/</guid>
-      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+      <description>---
+title: &#34;StanでLDA&#34;
+author: &#34;TakeR&#34;
+date: 2016-12-17T21:13:14-05:00
+categories: [&#34;R&#34;]
+---
+
+
+&lt;!-- BLOGDOWN-BODY-BEFORE
 
 /BLOGDOWN-BODY-BEFORE --&gt;
 

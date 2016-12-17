@@ -15,7 +15,15 @@
       <pubDate>Sat, 17 Dec 2016 21:13:14 -0500</pubDate>
       
       <guid>/post/lda/</guid>
-      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+      <description>---
+title: &#34;StanでLDA&#34;
+author: &#34;TakeR&#34;
+date: 2016-12-17T21:13:14-05:00
+categories: [&#34;R&#34;]
+---
+
+
+&lt;!-- BLOGDOWN-BODY-BEFORE
 
 /BLOGDOWN-BODY-BEFORE --&gt;
 
@@ -617,6 +625,36 @@ wordcloud::wordcloud(docs.new[B], scale = c(4.5, 0.4), max.words = 200,
       
       <guid>/about/</guid>
       <description>&lt;p&gt;TakeRでは、Rや統計に関するテーマを中心に書きます.たまに、心理学や精神医学にも触れるかもしれません. イベント等の告知にも使います.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RStudioでブログサイト構築・管理</title>
+      <link>/blog/past1/</link>
+      <pubDate>Thu, 15 Dec 2016 22:41:10 +0900</pubDate>
+      
+      <guid>/blog/past1/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;div id=&#34;hoge&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;hoge&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hogehoge&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;　hogehoge&lt;/h1&gt;
+&lt;/div&gt;
+
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
 </description>
     </item>
     

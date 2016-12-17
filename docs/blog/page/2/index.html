@@ -36,7 +36,7 @@
 <meta property="og:url" content="/blog/" />
 
 
-<meta property="og:updated_time" content="2016-12-17T21:27:24&#43;09:00"/>
+<meta property="og:updated_time" content="2014-03-10T00:00:00&#43;00:00"/>
 
 
 
@@ -188,11 +188,11 @@
 
                 
                     <li>
-                        <a href="../../../post/hello-world/"><p>StanでLDA</p></a>
+                        <a href="../../../blog/creating-a-new-theme/"><p>Creating a New Theme</p></a>
                     </li>
                 
                     <li>
-                        <a href="../../../post/lda/"><p>StanでLDA</p></a>
+                        <a href="../../../blog/goisforlovers/"><p>(Hu)go Template Primer</p></a>
                     </li>
                 
             </ul>
@@ -214,10 +214,8 @@
     <header>
     <div class="title">
         
-            <h2><a href="../../../post/new/">RStudioでブログサイトの管理</a></h2>
+            <h2><a href="../../../blog/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></h2>
         
-        
-            <p>ほげほげ</p>
         
     </div>
     <div class="meta">
@@ -226,11 +224,11 @@
         
 
         <time class="published"
-            datetime='2016-12-17'>
-            December 17, 2016</time>
-        <span class="author">TakeR</span>
+            datetime='2014-03-10'>
+            March 10, 2014</time>
+        <span class="author">Migrating author</span>
         
-            <p>1 minute read</p>
+            <p>4 minute read</p>
         
         
     </div>
@@ -238,11 +236,20 @@
 
     
 
-    <p>library(blogdown) new_site() new_content()</p>
+    <p><h2 id="move-static-content-to-static">Move static content to <code>static</code></h2>
+
+<p>Jekyll has a rule that any directory not starting with <code>_</code> will be copied as-is to the <code>_site</code> output. Hugo keeps all static content under <code>static</code>. You should therefore move it all there.
+With Jekyll, something that looked like</p>
+
+<pre><code>▾ &lt;root&gt;/
+    ▾ images/
+        logo.png
+</code></pre>
+</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="../../../post/new/" class="button big">Continue Reading</a></li>
+            <li><a href="../../../blog/migrate-from-jekyll/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -260,97 +267,7 @@
                     
 
                     
-                        Category
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='../../../categoriesstan'>Stan</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="../../../blog/creating-a-new-theme/">Creating a New Theme</a></h2>
-        
-        
-            <p>Learn how to create a theme on Hugo</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2014-09-28'>
-            September 28, 2014</time>
-        <span class="author">Theme author</span>
-        
-            <p>35 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-        
-        
-
-
-
-
-    
-    
-        
-    
-
-
-        
-
-        <a href="../../../blog/creating-a-new-theme/" class="image featured">
-            <img src="../../../img/2014/09/pic01.jpg" alt="" />
-        </a>
-    
-
-
-    <p>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
-We&rsquo;ll start with creating a new site with a very basic template.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="../../../blog/creating-a-new-theme/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-
-                    
-                        Category
+                        Categories
                     
                 
             </li>
@@ -361,6 +278,8 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
     
         <li><a href='../../../categorieshugo'>Hugo</a></li>
     
+        <li><a href='../../../categoriesjekyll'>Jekyll</a></li>
+    
 </ul>
 
     </footer>
@@ -371,7 +290,7 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
     <header>
     <div class="title">
         
-            <h2><a href="../../../blog/goisforlovers/">(Hu)go Template Primer</a></h2>
+            <h2><a href="../../../post/"></a></h2>
         
         
     </div>
@@ -381,73 +300,28 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
         
 
         <time class="published"
-            datetime='2014-04-02'>
-            April 2, 2014</time>
-        <span class="author">Unknown Author</span>
+            datetime='0001-01-01'>
+            January 1, 0001</time>
+        <span class="author"></span>
         
-            <p>7 minute read</p>
+            <p>16 minute read</p>
         
         
     </div>
 </header>
 
     
-    
 
-    
-        
-        
-
-
-
-
-    
-    
-        
-    
-
-
-        
-
-        <a href="../../../blog/goisforlovers/" class="image featured">
-            <img src="../../../img/2014/04/pic02.jpg" alt="" />
-        </a>
-    
-
-
-    <p>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</p>
+    <p>StanでLDA: wordcloudクラスタリング           code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &ldquo;complete&rdquo;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="../../../blog/goisforlovers/" class="button big">Continue Reading</a></li>
+            <li><a href="../../../post/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-
-                    
-                        Category
-                    
-                
-            </li>
-        
-    
 
     
-    
-        <li><a href='../../../categoriesgo'>Go</a></li>
     
 </ul>
 
@@ -464,8 +338,7 @@ This document is a brief primer on using go templates.</p>
     
 
     
-        <li><a href="../../../blog/page/3/"
-                class="button big next">Next Page</a></li>
+        <li><a href="#" class="disabled button big next">Next Page</a></li>
     
 </ul>
 
@@ -571,13 +444,13 @@ This document is a brief primer on using go templates.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="../../../post/hello-world/">StanでLDA</a></h3>
+                                <h3><a href="../../../blog/creating-a-new-theme/">Creating a New Theme</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-12-17'>
-                                    December 17, 2016</time>
+                                    '2014-09-28'>
+                                    September 28, 2014</time>
                             </header>
                         </article>
                     </li>
@@ -585,13 +458,13 @@ This document is a brief primer on using go templates.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="../../../post/lda/">StanでLDA</a></h3>
+                                <h3><a href="../../../blog/goisforlovers/">(Hu)go Template Primer</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-12-17'>
-                                    December 17, 2016</time>
+                                    '2014-04-02'>
+                                    April 2, 2014</time>
                             </header>
                         </article>
                     </li>
@@ -638,15 +511,6 @@ This document is a brief primer on using go templates.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="../../../categories/r/">R</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="../../../categories/go/">Go</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -657,24 +521,6 @@ This document is a brief primer on using go templates.</p>
                         <article>
                             <header>
                                 <a href="../../../categories/jekyll/">Jekyll</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="../../../categories/stan/">Stan</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="../../../categories/%E3%81%AB%E3%82%83%E3%82%93%E3%81%93/">にゃんこ</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
