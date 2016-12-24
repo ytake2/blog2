@@ -233,7 +233,8 @@
 
     
 
-    <p>RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メキメキとドキュメント作成機能が充実していってます。私は、RやRStudioが大好きなので、可能な限り、RStudioと対面していたいのです。データ解析、論文作成、ウェルブサイトの構築・更新、今や全てRStudioで完結します (他の方とのやりとりがなければ…)。
+    <p>RStudioアドベントカレンダー 25日のエントリーです。
+RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メキメキとドキュメント作成機能が充実していってます。私は、RやRStudioが大好きなので、可能な限り、RStudioと対面していたいのです。データ解析、論文作成、ウェルブサイトの構築・更新、今や全てRStudioで完結します (他の方とのやりとりがなければ…)。
 前に、RStudioでウェブサイト構築が簡単にできるという僕の最も身近なRおじさん(@kazutan)のツイートみて、いじっていたらほんとに簡単にサイトが立ち上がってとても感動しました。
  blogdownパッケージ その後、特に不満なくRStudioでサイトの管理をしていたのですが、業務上、何か自由にメモや告知をあげられる、ブログのような機能をつけられたらな、と思っていました。何気なくTLを眺めていると、また僕の身近なRおじさん(@kazutan)が、ぼやいてくれました。そして知りました、blogdownパッケージ。僕にとってkazutanは欲しいものを届けてくれる、そう、サンタクロースのような存在なのかもしれません。
 以下では、順を追ってみていきます。
@@ -246,9 +247,6 @@
  これでRStudio側も準備完了です。今、右下には、siteフォルダには、「site.Rproj」と「.gitignore」のみです。
    RStudio上で, ブログサイト構築 RStudioでブログサイトを構築して管理するためのバッケージはblogdown(<a href="https://github.com/rstudio/blogdown)、開発者はRStudioドキュメント系の神、yihui(https://github.com/yihui)さんです。">https://github.com/rstudio/blogdown)、開発者はRStudioドキュメント系の神、yihui(https://github.com/yihui)さんです。</a>
  blogdownパッケージ: インストール blogdownパッケージをgithubからインストールします。hugo のテーマを使うので、hugoをインストールします。hugoについては、この記事やこの記事が参考になります。</p>
-
-<h1 id="blogdownのインストール-devtools-install-github-39-rstudio-blogdown-39-hugoのインストール-library-blogdown-blogdown-install-hugo-この極めてシンプルな1行を実行して少し待つと">blogdownのインストール devtools::install_github(&#39;rstudio/blogdown&#39;) # hugoのインストール library(blogdown) blogdown::install_hugo() この極めてシンプルな1行を実行して少し待つと…</h1>
-</p>
 
     <footer>
         <ul class="actions">
