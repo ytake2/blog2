@@ -1,11 +1,9 @@
 ---
 title: "StanでLDA"
 author: "TakeR"
-date: 2016-12-17T21:13:14-05:00
-categories: ["R"]
+date: '2016-12-17T21:13:14-05:00'
+categories: ["R","stan","LDA"]
 ---
-
-
 
 ```{r, echo=F, results="hide",warning=F,message=F}
 library(knitr)
@@ -93,8 +91,9 @@ docs <- tm_map(docs, removeWords, myStopwords)
 #delete.empty.docment
 dtm <- DocumentTermMatrix(docs)
 rowTotals <- apply(dtm , 1, sum) #Find the sum of words in each Document
-empty.rows <- dtm[rowTotals == 0, ]$dimnames[1][[1]]
-docs.new <- docs[-as.numeric(empty.rows)]
+#empty.rows <- dtm[rowTotals == 0, ]$dimnames[1][[1]]
+docs.new <- docs
+#docs.new <- docs[-as.numeric(empty.rows)]
 
 #library(wordcloud)
 #wordcloud(docs.new, scale = c(4.5, 0.4), max.words = 200, 
@@ -129,8 +128,7 @@ wordcloud2(subset(term.f,freq>=5), size=0.4)
 ```{r}
 letterCloud(subset(term.f,freq>=3), word = "Stan", 
             fontFamily = "Helvetica",
-            color=brewer.pal(3,"Paired"), 
-            wordSize=0, backgroundColor="white")
+            wordSize=2, backgroundColor="white")
 ```
 
 
