@@ -1,0 +1,619 @@
+
+
+
+    
+        
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            <title>RStudio Posts - Happiness Under Uncertainty</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.17" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        
+        <meta property="og:title" content="RStudio" />
+<meta property="og:description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/categories/rstudio/" />
+
+
+<meta property="og:updated_time" content="2016-12-25T14:21:35&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="RStudio">
+<meta itemprop="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="../../css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+<header id="header">
+    
+        <h2><a href="../../">HU!!</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="../../post">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../categories">
+                        Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../about">
+                        About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="../../post">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../categories">
+                            <h3>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../about">
+                            <h3>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="../../post/blogdown/"><p>RStudioではグラブれないけど、ブログれる</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="../../post/lda/"><p>StanでLDA</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <h1>RStudio</h1>
+        
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="../../post/blogdown/">RStudioではグラブれないけど、ブログれる</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-12-25'>
+            December 25, 2016</time>
+        <span class="author">TakeR</span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メキメキとドキュメント作成機能が充実していってます。私は、RやRStudioが大好きなので、可能な限り、RStudioと対面していたいのです。データ解析、論文作成、ウェルブサイトの構築・更新、今や全てRStudioで完結します (他の方とのやりとりがなければ…)。
+前に、RStudioでウェブサイト構築が簡単にできるという僕の最も身近なRおじさん(@kazutan)のツイートみて、いじっていたらほんとに簡単にサイトが立ち上がってとても感動しました。
+ blogdownパッケージ その後、特に不満なくRStudioでサイトの管理をしていたのですが、業務上、何か自由にメモや告知をあげられる、ブログのような機能をつけられたらな、と思っていました。何気なくTLを眺めていると、また僕の身近なRおじさん(@kazutan)が、ぼやいてくれました。そして知りました、blogdownパッケージ。僕にとってkazutanは欲しいものを届けてくれる、そう、サンタクロースのような存在なのかもしれません。
+以下では、順を追ってみていきます。
+1 Githubでリポジトリ作る]  2 RStudioでリポジトリとリンク  3 RStudio上で, ブログサイト構築  4 config.tomlを修正し、俺サイトに  5 投稿チェック  6 出来上がったサイトをcommit push!!   Githubでリボジトリを作る ブログをRStudioを通じてgithubで公開するために, Githubで新しいリポジトリ(Repository)を作成します。下の画像にあるように、Repositoriesタブをクリックして右端に現れる[New]ボタンを押します。
+  すると以下のページが登場するので、Repository nameに任意の名前を設定します。今回はmy_blogとしました。レポジトリ名を入力したら、一番下の[Create repository]ボタンを押します。
+  これで、ブログサイトのファイルをあげるためのレポジトリが出来ました。[<a href="https://github.com/アカウント名/レポジトリ名.git]をコピーしておきます。">https://github.com/アカウント名/レポジトリ名.git]をコピーしておきます。</a>
+  これでgithubの準備は完了です。ここからはRStudioで作業をします。
+ RStudioでgithubレポジトリとリンク RStudioを立ち上げて[File]-&gt;[New Project]-&gt;[Version Control]-&gt;[Git]と進めます。
+    次のClone Git RepositoryのRepository URLの空欄に、先ほど作成しコビーした、ブログ用のレポジトリのアドレスを貼り付けます。下二つの空欄は、任意に指定します。
+ これでRStudio側も準備完了です。今、右下には、siteフォルダには、「site.Rproj」と「.gitignore」のみです。
+   RStudio上で, ブログサイト構築 RStudioでブログサイトを構築して管理するためのバッケージはblogdown(<a href="https://github.com/rstudio/blogdown)、開発者はRStudioドキュメント系の神、yihui(https://github.com/yihui)さんです。">https://github.com/rstudio/blogdown)、開発者はRStudioドキュメント系の神、yihui(https://github.com/yihui)さんです。</a>
+ blogdownパッケージ: インストール blogdownパッケージをgithubからインストールします。hugo のテーマを使うので、hugoをインストールします。hugoについては、この記事やこの記事が参考になります。</p>
+
+<h1 id="blogdownのインストール-devtools-install-github-39-rstudio-blogdown-39-hugoのインストール-library-blogdown-blogdown-install-hugo-この極めてシンプルな1行を実行して少し待つと">blogdownのインストール devtools::install_github(&#39;rstudio/blogdown&#39;) # hugoのインストール library(blogdown) blogdown::install_hugo() この極めてシンプルな1行を実行して少し待つと…</h1>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="../../post/blogdown/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='../../categoriesrstudio'>RStudio</a></li>
+    
+        <li><a href='../../categoriesblogdown'>blogdown</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+
+        
+<ul class="actions pagination">
+    
+        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+    
+
+    
+        <li><a href="#" class="disabled button big next">Next Page</a></li>
+    
+</ul>
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="../../" class="logo"><img src="../../img/main/logo.jpg" alt="Hugo Future Imperfect" /></a>
+                
+            
+            
+                <header>
+                    <h2>Happiness/Uncertainty</h2>
+                    <p>統計関連の記事・イベント告知等を中心に多目的に使用します.</p>
+                </header>
+            
+            <ul class="icons">
+                
+                    <li><a href="../../categories/rstudio/index.xml" type="application/rss+xml"
+                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
+                
+                
+                    
+<li><a href="//github.com/ytake2" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/psycle44" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="../../post/blogdown/">RStudioではグラブれないけど、ブログれる</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2016-12-25'>
+                                    December 25, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="../../post/lda/">StanでLDA</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2016-12-17'>
+                                    December 17, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /post/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="../../categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../../categories/lda/">LDA</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../../categories/r/">R</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../../categories/rstudio/">RStudio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../../categories/blogdown/">blogdown</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../../categories/stan/">stan</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>https://ytake2.github.io/Rsite/_site/index.html</p>
+
+            <ul class="actions">
+                <li><a href="../../about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                    <li><a href="../../categories/rstudio/index.xml" type="application/rss+xml"
+                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
+                
+                
+                    
+<li><a href="//github.com/ytake2" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/psycle44" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; Happiness Under Uncertainty. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="../../js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
