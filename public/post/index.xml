@@ -1,13 +1,247 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Post-rsses on Happiness Under Uncertainty</title>
-    <link>/post/index.xml</link>
-    <description>Recent content in Post-rsses on Happiness Under Uncertainty</description>
+    <title>Posts on Happiness Under Uncertainty</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Happiness Under Uncertainty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Dec 2016 14:21:35 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Feb 2017 22:32:38 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2/26 (日)自殺リスクに関する研究会＠統計数理研究所</title>
+      <link>/post/suicide_study/</link>
+      <pubDate>Thu, 02 Feb 2017 22:32:38 +0900</pubDate>
+      
+      <guid>/post/suicide_study/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;div class=&#34;section level2&#34;&gt;
+&lt;h2&gt;研究会の開催案内です。&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ism.ac.jp/risk/suicide_ws7.html&#34;&gt;第7回 自殺リスクに関する研究会&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;概要&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;統計数理研究所にて開催されてきた自殺リスクに関する研究会は、本年度で最終回となります。これまで、多くの方にご支援いただきながら、自殺の問題に関するエビデンスを集積・展開するための方法論を議論してきました。最終回はこれまでの取り組みを振り返りながら、今後の展開を議論する会にできたらと考えております。皆様のご参加をお待ちしております。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;日時&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2017年2月26日(日) 10:30～14:00&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;場所&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;統計数理研究所 セミナー室2（3階 D304室)&lt;br /&gt;
+（〒190-8562　東京都立川市緑町10-3）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;主催&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;統計数理研究所 リスク解析戦略研究センター&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;後援&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;厚生労働科学研究 　「学際的・国際的アプローチによる自殺総合対策の新たな政策展開に関する研究」 　（研究代表者：本橋豊（京都府立医科大学大学院医学研究科））&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;プログラム&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;【セッション１　10:35-11:35&lt;br /&gt;
+　　「精神保健の疫学研究に携わって：精神科の受療データ解析を中心に」&lt;br /&gt;
+　　 立森 久照 (国立精神・神経医療研究センター 精神保健研究所)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「自殺死亡の地域統計を用いた空間集積性の検出と視覚化」&lt;br /&gt;
+　　 久保田 貴文（多摩大学経営情報学部）&lt;br /&gt;
+　　&lt;br /&gt;
+　　「空間データ解析と可視化：精神保健福祉施策に向けた有効活用」&lt;br /&gt;
+　　 高橋 邦彦 （名古屋大学大学院医学系研究科 臨床医薬学講座生物統計学分野)&lt;/p&gt;
+&lt;p&gt;昼休憩　 11:35-12:30&lt;/p&gt;
+&lt;p&gt;【セッション２　12:30-13:50】&lt;br /&gt;
+　　「過量服薬の再発予防に向けた臨床疫学研究」&lt;br /&gt;
+　　 奥村 泰之 (一般財団法人医療経済研究・社会保険福祉協会 医療経済研究機構 研究部)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「藤田先生の先行研究に学んだ精神保健統計の基礎」&lt;br /&gt;
+　　 河野 稔明 (国立精神・神経医療研究センター病院 司法精神科臨床研究センター)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「30年間の市区町村自殺統計から見えてきた、地域間格差の実態と対策の課題」&lt;br /&gt;
+　　 岡 檀 (和歌山県立医科大学 地域イノベーション戦略支援プログラム)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「市区町村の自殺対策と精神保健に係る資源配置との関連」&lt;br /&gt;
+　　 中西 三春 (東京都医学総合研究所 精神保健看護研究室)&lt;br /&gt;
+　&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2/26 (日)自殺リスクに関する研究会＠統計数理研究所</title>
+      <link>/post/suicide_study.knit/</link>
+      <pubDate>Thu, 02 Feb 2017 22:32:38 +0900</pubDate>
+      
+      <guid>/post/suicide_study.knit/</guid>
+      <description>
+
+&lt;h2 id=&#34;研究会の開催案内です:40d889587ad8870df88544ec061c4633&#34;&gt;研究会の開催案内です。&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ism.ac.jp/risk/suicide_ws7.html&#34;&gt;第7回 自殺リスクに関する研究会&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;概要:40d889587ad8870df88544ec061c4633&#34;&gt;概要&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;統計数理研究所にて開催されてきた自殺リスクに関する研究会は、本年度で最終回となります。これまで、多くの方にご支援いただきながら、自殺の問題に関するエビデンスを集積・展開するための方法論を議論してきました。最終回はこれまでの取り組みを振り返りながら、今後の展開を議論する会にできたらと考えております。皆様のご参加をお待ちしております。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;日時:40d889587ad8870df88544ec061c4633&#34;&gt;日時&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2017年2月26日(日) 10:30～14:00&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;場所:40d889587ad8870df88544ec061c4633&#34;&gt;場所&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;統計数理研究所 セミナー室2（3階 D304室)&lt;br /&gt;
+（〒190-8562　東京都立川市緑町10-3）&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;主催:40d889587ad8870df88544ec061c4633&#34;&gt;主催&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;統計数理研究所 リスク解析戦略研究センター&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;後援:40d889587ad8870df88544ec061c4633&#34;&gt;後援&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;厚生労働科学研究
+　「学際的・国際的アプローチによる自殺総合対策の新たな政策展開に関する研究」
+　（研究代表者：本橋豊（京都府立医科大学大学院医学研究科））&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;プログラム:40d889587ad8870df88544ec061c4633&#34;&gt;プログラム&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;【セッション１　10:35-11:35&lt;br /&gt;
+　　「精神保健の疫学研究に携わって：精神科の受療データ解析を中心に」&lt;br /&gt;
+　　    立森 久照 (国立精神・神経医療研究センター 精神保健研究所)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「自殺死亡の地域統計を用いた空間集積性の検出と視覚化」&lt;br /&gt;
+　　    久保田 貴文（多摩大学経営情報学部）&lt;br /&gt;
+　　&lt;br /&gt;
+　　「空間データ解析と可視化：精神保健福祉施策に向けた有効活用」&lt;br /&gt;
+　　    高橋 邦彦 （名古屋大学大学院医学系研究科 臨床医薬学講座生物統計学分野)&lt;/p&gt;
+
+&lt;p&gt;昼休憩　 11:35-12:30&lt;/p&gt;
+
+&lt;p&gt;【セッション２　12:30-13:50】&lt;br /&gt;
+　　「過量服薬の再発予防に向けた臨床疫学研究」&lt;br /&gt;
+　　    奥村 泰之 (一般財団法人医療経済研究・社会保険福祉協会 医療経済研究機構 研究部)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「藤田先生の先行研究に学んだ精神保健統計の基礎」&lt;br /&gt;
+　　    河野 稔明 (国立精神・神経医療研究センター病院 司法精神科臨床研究センター)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「30年間の市区町村自殺統計から見えてきた、地域間格差の実態と対策の課題」&lt;br /&gt;
+　　    岡 檀 (和歌山県立医科大学 地域イノベーション戦略支援プログラム)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「市区町村の自殺対策と精神保健に係る資源配置との関連」&lt;br /&gt;
+　　    中西 三春 (東京都医学総合研究所 精神保健看護研究室)&lt;br /&gt;
+　&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2/26 (日)自殺リスクに関する研究会＠統計数理研究所</title>
+      <link>/post/suicide_study.utf8/</link>
+      <pubDate>Thu, 02 Feb 2017 22:32:38 +0900</pubDate>
+      
+      <guid>/post/suicide_study.utf8/</guid>
+      <description>
+
+&lt;h2 id=&#34;研究会の開催案内です:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;研究会の開催案内です。&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ism.ac.jp/risk/suicide_ws7.html&#34;&gt;第7回 自殺リスクに関する研究会&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;概要:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;概要&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;統計数理研究所にて開催されてきた自殺リスクに関する研究会は、本年度で最終回となります。これまで、多くの方にご支援いただきながら、自殺の問題に関するエビデンスを集積・展開するための方法論を議論してきました。最終回はこれまでの取り組みを振り返りながら、今後の展開を議論する会にできたらと考えております。皆様のご参加をお待ちしております。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;日時:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;日時&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2017年2月26日(日) 10:30～14:00&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;場所:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;場所&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;統計数理研究所 セミナー室2（3階 D304室)&lt;br /&gt;
+（〒190-8562　東京都立川市緑町10-3）&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;主催:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;主催&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;統計数理研究所 リスク解析戦略研究センター&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;後援:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;後援&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;厚生労働科学研究
+　「学際的・国際的アプローチによる自殺総合対策の新たな政策展開に関する研究」
+　（研究代表者：本橋豊（京都府立医科大学大学院医学研究科））&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;プログラム:f2e0081353abbfa2eea465ae84675ff5&#34;&gt;プログラム&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;【セッション１　10:35-11:35&lt;br /&gt;
+　　「精神保健の疫学研究に携わって：精神科の受療データ解析を中心に」&lt;br /&gt;
+　　    立森 久照 (国立精神・神経医療研究センター 精神保健研究所)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「自殺死亡の地域統計を用いた空間集積性の検出と視覚化」&lt;br /&gt;
+　　    久保田 貴文（多摩大学経営情報学部）&lt;br /&gt;
+　　&lt;br /&gt;
+　　「空間データ解析と可視化：精神保健福祉施策に向けた有効活用」&lt;br /&gt;
+　　    高橋 邦彦 （名古屋大学大学院医学系研究科 臨床医薬学講座生物統計学分野)&lt;/p&gt;
+
+&lt;p&gt;昼休憩　 11:35-12:30&lt;/p&gt;
+
+&lt;p&gt;【セッション２　12:30-13:50】&lt;br /&gt;
+　　「過量服薬の再発予防に向けた臨床疫学研究」&lt;br /&gt;
+　　    奥村 泰之 (一般財団法人医療経済研究・社会保険福祉協会 医療経済研究機構 研究部)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「藤田先生の先行研究に学んだ精神保健統計の基礎」&lt;br /&gt;
+　　    河野 稔明 (国立精神・神経医療研究センター病院 司法精神科臨床研究センター)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「30年間の市区町村自殺統計から見えてきた、地域間格差の実態と対策の課題」&lt;br /&gt;
+　　    岡 檀 (和歌山県立医科大学 地域イノベーション戦略支援プログラム)&lt;br /&gt;
+　　&lt;br /&gt;
+　　「市区町村の自殺対策と精神保健に係る資源配置との関連」&lt;br /&gt;
+　　    中西 三春 (東京都医学総合研究所 精神保健看護研究室)&lt;br /&gt;
+　&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>RStudioではグラブれないけど、ブログれる</title>

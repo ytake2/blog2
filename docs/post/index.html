@@ -16,7 +16,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.17" />
+        <meta name="generator" content="Hugo 0.15" />
         
 
 
@@ -34,7 +34,7 @@
 <meta property="og:url" content="/post/" />
 
 
-<meta property="og:updated_time" content="2016-12-25T14:21:35&#43;09:00"/>
+<meta property="og:updated_time" content="2017-02-02T22:32:38&#43;09:00"/>
 
 
 
@@ -90,20 +90,20 @@
         <ul>
             
                 <li>
-                    <a href="../post">
+                    <a href="../post/">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="../categories">
+                    <a href="../categories/">
                         Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="../about">
+                    <a href="../about/">
                         About
                     </a>
                 </li>
@@ -143,7 +143,7 @@
             <ul class="links">
                 
                     <li>
-                        <a href="../post">
+                        <a href="../post/">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -154,7 +154,7 @@
                     </li>
                 
                     <li>
-                        <a href="../categories">
+                        <a href="../categories/">
                             <h3>
                                 
                                 Categories
@@ -163,7 +163,7 @@
                     </li>
                 
                     <li>
-                        <a href="../about">
+                        <a href="../about/">
                             <h3>
                                 
                                 About
@@ -186,11 +186,11 @@
 
                 
                     <li>
-                        <a href="../post/blogdown/"><p>RStudioではグラブれないけど、ブログれる</p></a>
+                        <a href="../post/suicide_study/"><p>2/26 (日)自殺リスクに関する研究会＠統計数理研究所</p></a>
                     </li>
                 
                     <li>
-                        <a href="../post/lda/"><p>StanでLDA</p></a>
+                        <a href="../post/suicide_study.knit/"><p>2/26 (日)自殺リスクに関する研究会＠統計数理研究所</p></a>
                     </li>
                 
             </ul>
@@ -212,7 +212,7 @@
     <header>
     <div class="title">
         
-            <h2><a href="../post/blogdown/">RStudioではグラブれないけど、ブログれる</a></h2>
+            <h2><a href="../post/suicide_study/">2/26 (日)自殺リスクに関する研究会＠統計数理研究所</a></h2>
         
         
     </div>
@@ -222,11 +222,11 @@
         
 
         <time class="published"
-            datetime='2016-12-25'>
-            December 25, 2016</time>
-        <span class="author">TakeR</span>
+            datetime='2017-02-02'>
+            February 2, 2017</time>
+        <span class="author">takeR</span>
         
-            <p>6 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -234,24 +234,11 @@
 
     
 
-    <p>RStudioアドベントカレンダー 25日のエントリーです。
-RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メキメキとドキュメント作成機能が充実していってます。私は、RやRStudioが大好きなので、可能な限り、RStudioと対面していたいのです。データ解析、論文作成、ウェルブサイトの構築・更新、今や全てRStudioで完結します (他の方とのやりとりがなければ…)。
-前に、RStudioでウェブサイト構築が簡単にできるという僕の最も身近なRおじさん(@kazutan)のツイートみて、いじっていたらほんとに簡単にサイトが立ち上がってとても感動しました。
- blogdownパッケージ その後、特に不満なくRStudioでサイトの管理をしていたのですが、業務上、何か自由にメモや告知をあげられる、ブログのような機能をつけられたらな、と思っていました。何気なくTLを眺めていると、また僕の身近なRおじさん(@kazutan)が、ぼやいてくれました。そして知りました、blogdownパッケージ。僕にとってkazutanは欲しいものを届けてくれる、そう、サンタクロースのような存在なのかもしれません。
-以下では、順を追ってみていきます。
-1 Githubでリポジトリ作る]  2 RStudioでリポジトリとリンク  3 RStudio上で, ブログサイト構築  4 config.tomlを修正し、俺サイトに  5 投稿チェック  6 出来上がったサイトをcommit push!!   Githubでリボジトリを作る ブログをRStudioを通じてgithubで公開するために, Githubで新しいリポジトリ(Repository)を作成します。下の画像にあるように、Repositoriesタブをクリックして右端に現れる[New]ボタンを押します。
-  すると以下のページが登場するので、Repository nameに任意の名前を設定します。今回はmy_blogとしました。レポジトリ名を入力したら、一番下の[Create repository]ボタンを押します。
-  これで、ブログサイトのファイルをあげるためのレポジトリが出来ました。[<a href="https://github.com/アカウント名/レポジトリ名.git]をコピーしておきます。">https://github.com/アカウント名/レポジトリ名.git]をコピーしておきます。</a>
-  これでgithubの準備は完了です。ここからはRStudioで作業をします。
- RStudioでgithubレポジトリとリンク RStudioを立ち上げて[File]-&gt;[New Project]-&gt;[Version Control]-&gt;[Git]と進めます。
-    次のClone Git RepositoryのRepository URLの空欄に、先ほど作成しコビーした、ブログ用のレポジトリのアドレスを貼り付けます。下二つの空欄は、任意に指定します。
- これでRStudio側も準備完了です。今、右下には、siteフォルダには、「site.Rproj」と「.gitignore」のみです。
-   RStudio上で, ブログサイト構築 RStudioでブログサイトを構築して管理するためのバッケージはblogdown(<a href="https://github.com/rstudio/blogdown)、開発者はRStudioドキュメント系の神、yihui(https://github.com/yihui)さんです。">https://github.com/rstudio/blogdown)、開発者はRStudioドキュメント系の神、yihui(https://github.com/yihui)さんです。</a>
- blogdownパッケージ: インストール blogdownパッケージをgithubからインストールします。hugo のテーマを使うので、hugoをインストールします。hugoについては、この記事やこの記事が参考になります。</p>
+    <p>研究会の開催案内です。 第7回 自殺リスクに関する研究会 概要 統計数理研究所にて開催されてきた自殺リスクに関する研究会は、本年度で最終回となります。これまで、多くの方にご支援いただきながら、自殺の問題に関するエビデンスを集積・展開するための方法論を議論してきました。最終回はこれまでの取り組みを振り返りながら、今後の展開を議論する会にできたらと考えております。皆様のご参加をお待ちしております。 日時 2017年2月26日(日) 10:30～14:00 場所 統計数理研究所 セミナー室2（3階 D304室) （〒190-8562 東京都立川市緑町10-3） 主催 統計数理研究所 リスク解析戦略研究センター 後援 厚生労働科学研究 「学際的・国際的アプローチによる自殺総合対策の新たな政策展開に関する研究」 （研究代表者：本橋豊（京都府立医科大学大学院医学研究科）） プログラム 【セッション１ 10:35-11:35 「精神保健の疫学研究に携わって：精神科の受療データ解析を中心に」 立森 久照 (国立精神・神経医療研究センター 精神保健研究所) 「自殺死亡の地域統計を用いた空間集積性の検出と視覚化」 久保田 貴文（多摩大学経営情報学部） 「空間データ解析と可視化：精神保健福祉施策に向けた有効活用」 高橋 邦彦 （名古屋大学大学院医学系研究科 臨床医薬学講座生物統計学分野) 昼休憩 11:35-12:30 【セッション２ 12:30-13:50】 「過量服薬の再発予防に向けた臨床疫学研究」 奥村 泰之 (一般財団法人医療経済研究・社会保険福祉協会 医療経済研究機構 研究部) 「藤田先生の先行研究に学んだ精神保健統計の基礎」 河野 稔明 (国立精神・神経医療研究センター病院 司法精神科臨床研究センター) 「30年間の市区町村自殺統計から見えてきた、地域間格差の実態と対策の課題」 岡 檀 (和歌山県立医科大学 地域イノベーション戦略支援プログラム) 「市区町村の自殺対策と精神保健に係る資源配置との関連」 中西 三春 (東京都医学総合研究所 精神保健看護研究室)</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="../post/blogdown/" class="button big">Continue Reading</a></li>
+            <li><a href="../post/suicide_study/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -278,9 +265,9 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
 
     
     
-        <li><a href='../categoriesrstudio'>RStudio</a></li>
+        <li><a href='../categories/suicide'>suicide</a></li>
     
-        <li><a href='../categoriesblogdown'>blogdown</a></li>
+        <li><a href='../categories/symposium'>symposium</a></li>
     
 </ul>
 
@@ -292,7 +279,7 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
     <header>
     <div class="title">
         
-            <h2><a href="../post/lda/">StanでLDA</a></h2>
+            <h2><a href="../post/suicide_study.knit/">2/26 (日)自殺リスクに関する研究会＠統計数理研究所</a></h2>
         
         
     </div>
@@ -302,11 +289,11 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
         
 
         <time class="published"
-            datetime='2016-12-17'>
-            December 17, 2016</time>
-        <span class="author">TakeR</span>
+            datetime='2017-02-02'>
+            February 2, 2017</time>
+        <span class="author">takeR</span>
         
-            <p>16 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -314,11 +301,11 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
 
     
 
-    <p>StanでLDA           code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &ldquo;complete&rdquo;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</p>
+    <p>研究会の開催案内です。 第7回 自殺リスクに関する研究会 概要 統計数理研究所にて開催されてきた自殺リスクに関する研究会は、本年度で最終回となります。これまで、多くの方にご支援いただきながら、自殺の問題に関するエビデンスを集積・展開するための方法論を議論してきました。最終回はこれまでの取り組みを振り返りながら、今後の展開を議論する会にできたらと考えております。皆様のご参加をお待ちしております。 日時 2017年2月26日(日) 10:30～14:00 場所 統計数理研究所 セミナー室2（3階 D304室) （〒190-8562 東京都立川市緑町10-3） 主催 統計数理研究所 リスク解析戦略研究センター 後援 厚生労働科学研究 「学際的・国際的アプローチによる自殺総合対策の新たな政策展開に関する研究」 （研究代表者：本橋豊（京都府立医科大学大学院医学研究科）） プログラム 【セッション１ 10:35-11:35 「精神保健の疫学研究に携わって：精神科の受療データ解析を中心に」 立森 久照 (国立精神・神経医療研究センター 精神保健研究所) 「自殺死亡の地域統計を用いた空間集積性の検出と視覚化」 久保田 貴文（多摩大学経営情報学部） 「空間データ解析と可視化：精神保健福祉施策に向けた有効活用」 高橋 邦彦 （名古屋大学大学院医学系研究科 臨床医薬学講座生物統計学分野) 昼休憩 11:35-12:30 【セッション２ 12:30-13:50】 「過量服薬の再発予防に向けた臨床疫学研究」 奥村 泰之 (一般財団法人医療経済研究・社会保険福祉協会 医療経済研究機構 研究部) 「藤田先生の先行研究に学んだ精神保健統計の基礎」 河野 稔明 (国立精神・神経医療研究センター病院 司法精神科臨床研究センター) 「30年間の市区町村自殺統計から見えてきた、地域間格差の実態と対策の課題」 岡 檀 (和歌山県立医科大学 地域イノベーション戦略支援プログラム) 「市区町村の自殺対策と精神保健に係る資源配置との関連」 中西 三春 (東京都医学総合研究所 精神保健看護研究室)</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="../post/lda/" class="button big">Continue Reading</a></li>
+            <li><a href="../post/suicide_study.knit/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -345,11 +332,76 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
 
     
     
-        <li><a href='../categoriesr'>R</a></li>
+        <li><a href='../categories/suicide'>suicide</a></li>
     
-        <li><a href='../categoriesstan'>stan</a></li>
+        <li><a href='../categories/symposium'>symposium</a></li>
     
-        <li><a href='../categorieslda'>LDA</a></li>
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="../post/suicide_study.utf8/">2/26 (日)自殺リスクに関する研究会＠統計数理研究所</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-02-02'>
+            February 2, 2017</time>
+        <span class="author">takeR</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>研究会の開催案内です。 第7回 自殺リスクに関する研究会 概要 統計数理研究所にて開催されてきた自殺リスクに関する研究会は、本年度で最終回となります。これまで、多くの方にご支援いただきながら、自殺の問題に関するエビデンスを集積・展開するための方法論を議論してきました。最終回はこれまでの取り組みを振り返りながら、今後の展開を議論する会にできたらと考えております。皆様のご参加をお待ちしております。 日時 2017年2月26日(日) 10:30～14:00 場所 統計数理研究所 セミナー室2（3階 D304室) （〒190-8562 東京都立川市緑町10-3） 主催 統計数理研究所 リスク解析戦略研究センター 後援 厚生労働科学研究 「学際的・国際的アプローチによる自殺総合対策の新たな政策展開に関する研究」 （研究代表者：本橋豊（京都府立医科大学大学院医学研究科）） プログラム 【セッション１ 10:35-11:35 「精神保健の疫学研究に携わって：精神科の受療データ解析を中心に」 立森 久照 (国立精神・神経医療研究センター 精神保健研究所) 「自殺死亡の地域統計を用いた空間集積性の検出と視覚化」 久保田 貴文（多摩大学経営情報学部） 「空間データ解析と可視化：精神保健福祉施策に向けた有効活用」 高橋 邦彦 （名古屋大学大学院医学系研究科 臨床医薬学講座生物統計学分野) 昼休憩 11:35-12:30 【セッション２ 12:30-13:50】 「過量服薬の再発予防に向けた臨床疫学研究」 奥村 泰之 (一般財団法人医療経済研究・社会保険福祉協会 医療経済研究機構 研究部) 「藤田先生の先行研究に学んだ精神保健統計の基礎」 河野 稔明 (国立精神・神経医療研究センター病院 司法精神科臨床研究センター) 「30年間の市区町村自殺統計から見えてきた、地域間格差の実態と対策の課題」 岡 檀 (和歌山県立医科大学 地域イノベーション戦略支援プログラム) 「市区町村の自殺対策と精神保健に係る資源配置との関連」 中西 三春 (東京都医学総合研究所 精神保健看護研究室)</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="../post/suicide_study.utf8/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='../categories/suicide'>suicide</a></li>
+    
+        <li><a href='../categories/symposium'>symposium</a></li>
     
 </ul>
 
@@ -365,7 +417,8 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
+        <li><a href="../post/page/2/"
+                class="button big next">Next Page</a></li>
     
 </ul>
 
@@ -471,13 +524,13 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
                     <li>
                         <article>
                             <header>
-                                <h3><a href="../post/blogdown/">RStudioではグラブれないけど、ブログれる</a></h3>
+                                <h3><a href="../post/suicide_study/">2/26 (日)自殺リスクに関する研究会＠統計数理研究所</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-12-25'>
-                                    December 25, 2016</time>
+                                    '2017-02-02'>
+                                    February 2, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -485,13 +538,13 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
                     <li>
                         <article>
                             <header>
-                                <h3><a href="../post/lda/">StanでLDA</a></h3>
+                                <h3><a href="../post/suicide_study.knit/">2/26 (日)自殺リスクに関する研究会＠統計数理研究所</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-12-17'>
-                                    December 17, 2016</time>
+                                    '2017-02-02'>
+                                    February 2, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -529,8 +582,17 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
                     <li>
                         <article>
                             <header>
-                                <a href="../categories/lda/">LDA</a>
-                                <span style="float:right;">1</span>
+                                <a href="../categories/suicide/">suicide</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../categories/symposium/">symposium</a>
+                                <span style="float:right;">3</span>
                             </header>
                         </article>
                     </li>
@@ -539,6 +601,24 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
                         <article>
                             <header>
                                 <a href="../categories/r/">R</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../categories/stan/">stan</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="../categories/lda/">LDA</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -557,15 +637,6 @@ RStudioでブログを書きたい RStudioは、Rmarkdownの登場以降、メ�
                         <article>
                             <header>
                                 <a href="../categories/blogdown/">blogdown</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="../categories/stan/">stan</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
